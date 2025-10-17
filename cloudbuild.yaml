@@ -13,15 +13,9 @@ steps:
       - push
       - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO}/${_IMAGE}:latest"
 
-  - name: gcr.io/cloud-builders/docker
-    args:
-      - push
-      - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO}/${_IMAGE}:latest"
-
 images:
   - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO}/${_IMAGE}:latest"
-options:
-  logging: CLOUD_LOGGING_ONLY
+
 substitutions:
   _REGION: asia-east2
   _REPO: gpu-check
