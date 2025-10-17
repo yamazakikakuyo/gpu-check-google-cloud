@@ -10,9 +10,10 @@ COPY src /src
 
 EXPOSE 8080
 
-# WORKDIR /app
+WORKDIR /src
 
 # CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
 # ENTRYPOINT ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
 ENTRYPOINT ["python", "serve_main.py"]
+
 
